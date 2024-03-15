@@ -8,30 +8,28 @@ date: 2024-03-07
 
 import Image from 'next/image'
 
-<div className='grid grid-cols-2'>
+<div className='flex grid-cols-2'>
 
-    <div className='h-auto w-50'> 
+    <div className='h-auto w-auto'> 
         I am Prayag Yadav, a 22 year old Indian student studying physics at the University of Hyderabad. 
+        I was born in prayagraj(then Allahabad),India on 25th of April in 2001. I grew up in a small town called Ghugus in Chandrapur district in Maharashtra, India.
     </div>
 
-    <div  className='bg-gradient-to-r rounded rounded-lg transition-all ease-in-out duration-500 hover:from-green-400 hover:via-indigo-300 hover:to-blue-700 h-48 w-48'>
-        <div className='p-0.5 grid justify-items-center '>
-            <Image
-                src="/images/aboutmepfp.jpeg"
-                alt="Prayag Yadav"
-                width={250}
-                height={250}
-                priority
-                className="next-image rounded rounded-lg"
-                />
+    <div className='flex justify-end'>
+        <div  className='h-auto w-auto grid justify-items-centre bg-gradient-to-r rounded rounded-lg '>
+            <div className='p-0 grid justify-items-end '>
+                <Image
+                    src="/images/aboutmepfp.jpeg"
+                    alt="Prayag Yadav"
+                    width={250}
+                    height={250}
+                    priority
+                    className="next-image rounded rounded-lg"
+                    />
+            </div>
         </div>
     </div>
 
 </div>
-
-And here is some latex : ax^2 + bx + c = 0
-$\alpha \beta \gamma$
-
-
 
 <div className="text-sm text-gray-400">  🚧 Website under construction 🚧 : expect more stuff coming soon 🔥🔥🔥 </div>
