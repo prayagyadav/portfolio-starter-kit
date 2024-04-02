@@ -46,13 +46,13 @@
 }
 @media screen and (min-width: 769px) {
   .newbody {
-  background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/images/forest.jpg');
-}
-}
-@media screen and (min-width: 1200px) {
-  .body {
   background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/images/17.jpg');
   background-size: 1920px 1080px;
+}
+}
+@media screen and (max-width: 768px) {
+  .body {
+  background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/images/forest.jpg');
 }
 }
 b,
