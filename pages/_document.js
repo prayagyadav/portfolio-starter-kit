@@ -22,7 +22,7 @@ export default function Document() {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
       </Head>
-      <body class="newbody">
+      <body >
         <Main />
         <NextScript />
       </body>
