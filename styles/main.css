@@ -62,10 +62,10 @@ body{
   /* font-variation-settings: 'wght' 450;
   font-variant: common-ligatures contextual; */
   letter-spacing: 0.00em;
-  background-image:linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) ), url('/images/17.jpg');
+  /* background-image:linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) ), url('/images/17.jpg');
   background-repeat: no-repeat;
   background-size: 1920px 1080px;
-  background-attachment: fixed;
+  background-attachment: fixed; */
 }
 
 b,
