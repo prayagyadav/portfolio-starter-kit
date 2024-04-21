@@ -1,5 +1,2 @@
-const withNextra = require('nextra')('nextra-theme-blog', './theme.config.js')
+const withNextra = require('nextra')('nextra-theme-blog', './theme.config.js',"latex: true")
 module.exports = withNextra()
-// module.exports = require('nextra')({
-//     latex: true
-//   })

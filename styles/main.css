@@ -37,17 +37,32 @@
   font-display: block;
   src: url(/fonts/Libre_Baskerville/LibreBaskerville-Italic.ttf);
 }
+@font-face {
+  font-family: 'honk';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: block;
+  src: url(/fonts/Honk/Honk-Regular-Variable.ttf);
+}
+.funnyfont{
+  font-family:'honk','libre-baskerville', 'Inter var';
+  font-variation-settings: 'wght' 850;
+  font-size: 3.75rem;
+  line-height: 1; 
+
+
+}
 body{
   font-family:'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: subpixel-antialiased;
-  font-feature-settings: 'case' 1, 'cpsp' 1, 'dlig' 1, 'cv01' 1, 'cv02',
-    'cv03' 1, 'cv04' 1;
-  font-variation-settings: 'wght' 450;
-  font-variant: common-ligatures contextual;
+  /* font-feature-settings: 'case' 1, 'cpsp' 1, 'dlig' 1, 'cv01' 1, 'cv02',
+    'cv03' 1, 'cv04' 1; */
+  /* font-variation-settings: 'wght' 450;
+  font-variant: common-ligatures contextual; */
   letter-spacing: 0.00em;
-  background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/images/17.jpg');
+  background-image:linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) ), url('/images/17.jpg');
   background-repeat: no-repeat;
   background-size: 1920px 1080px;
   background-attachment: fixed;
@@ -94,60 +109,4 @@ img.next-image {
 
 .nav-line .nav-link {
   color: #69778c;
-}
-
-.tiptap {
-  > * + * {
-    margin-top: 0.75em;
-  }
-
-  ul,
-  ol {
-    padding: 0 1rem;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    line-height: 1.1;
-  }
-
-  code {
-    background-color: rgba(#616161, 0.1);
-    color: #616161;
-  }
-
-  pre {
-    background: #0D0D0D;
-    color: #FFF;
-    font-family: 'JetBrainsMono', monospace;
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
-
-    code {
-      color: inherit;
-      padding: 0;
-      background: none;
-      font-size: 0.8rem;
-    }
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  blockquote {
-    padding-left: 1rem;
-    border-left: 2px solid rgba(#0D0D0D, 0.1);
-  }
-
-  hr {
-    border: none;
-    border-top: 2px solid rgba(#0D0D0D, 0.1);
-    margin: 2rem 0;
-  }
 }
