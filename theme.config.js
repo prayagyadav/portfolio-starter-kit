@@ -24,8 +24,9 @@ export default {
   navs: [
     {
       url: 'https://blog.prayagyadav.me',
-      name: 'blog'
+      name: 'Blog ↗️'
     }
-  ]
+  ],
+  
 }
 

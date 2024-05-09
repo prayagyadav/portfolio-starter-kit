@@ -21,28 +21,28 @@
   font-style: normal;
   font-weight: 400 700;
   font-display: block;
-  src: url(/fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf);
+  src: url(/fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf) format('woff2');
 }
 @font-face {
   font-family: 'libre-baskerville';
   font-style: bold;
   font-weight: 400 700;
   font-display: block;
-  src: url(/fonts/Libre_Baskerville/LibreBaskerville-Bold.ttf);
+  src: url(/fonts/Libre_Baskerville/LibreBaskerville-Bold.ttf) format('woff2');
 }
 @font-face {
   font-family: 'libre-baskerville';
   font-style: italic;
   font-weight: 400 700;
   font-display: block;
-  src: url(/fonts/Libre_Baskerville/LibreBaskerville-Italic.ttf);
+  src: url(/fonts/Libre_Baskerville/LibreBaskerville-Italic.ttf) format('woff2');
 }
 @font-face {
   font-family: 'honk';
   font-style: normal;
   font-weight: 400 700;
   font-display: block;
-  src: url(/fonts/Honk/Honk-Regular-Variable.ttf);
+  src: url(/fonts/Honk/Honk-Regular-Variable.ttf) format('woff2');
 }
 .funnyfont{
   font-family:'honk','libre-baskerville', 'Inter var';

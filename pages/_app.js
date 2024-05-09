@@ -38,6 +38,27 @@ export default function Nextra({ Component, pageProps }) {
                type="font/woff2"
                crossOrigin="anonymous"
              />
+             <link
+               rel="preload"
+               href="/fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf"
+               as="font"
+               type="font/woff2"
+               crossOrigin="anonymous"
+             />
+             <link
+               rel="preload"
+               href="/fonts/Libre_Baskerville/LibreBaskerville-Bold.ttf"
+               as="font"
+               type="font/woff2"
+               crossOrigin="anonymous"
+             />
+             <link
+               rel="preload"
+               href="/fonts/Libre_Baskerville/LibreBaskerville-Italic.ttf"
+               as="font"
+               type="font/woff2"
+               crossOrigin="anonymous"
+             />
            </Head>
            
            <Component {...pageProps} />
