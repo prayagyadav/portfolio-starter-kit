@@ -10,6 +10,38 @@ Here are some photos.
 
 import Image from 'next/image'
 
+<div className="grid gap-2">
+    <div >
+        <a href="/images/cms_selfie.jpg">
+            <Image
+                src="/images/cms_selfie.jpg"
+               	alt="Picture taken at the CMS Cavern. Cred: Gaelle"
+                width={1125}
+                height={750}
+                priority
+                className="next-image hover:brightness-110 rounded rounded-lg shadow-md"
+            />
+        </a>
+        Picture taken at the CMS Cavern. Cred: Gaelle
+    </div>
+</div>
+
+<div className="grid gap-2">
+    <div >
+        <a href="/images/Jet_D'Eau.jpg">
+            <Image
+                src="/images/Jet_D'Eau.jpg"
+               	alt="Jet D'Eau at Geneve, Switzerland"
+                width={1125}
+                height={750}
+                priority
+                className="next-image hover:brightness-110 rounded rounded-lg shadow-md"
+            />
+        </a>
+        Jet D'Eau at Geneve, Switzerland
+    </div>
+</div>
+
 <div className="grid grid-cols-2 gap-2">
 	<div >
 	<a href="/images/Thesis.jpg">
@@ -64,7 +96,7 @@ import Image from 'next/image'
 	Pouring liquid Nitrogen during a demonstration of superconductivity to school kids
 	</div>
 </div>
-{/* 
+{/*
 <Image
   src="/images/photo.jpg"
   alt="Photo"
