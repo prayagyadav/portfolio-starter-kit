@@ -21,7 +21,8 @@
   font-style: normal;
   font-weight: 400 700;
   font-display: block;
-  src: url(/fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf) format('woff2');
+  src: url(/fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf)
+    format('woff2');
 }
 @font-face {
   font-family: 'libre-baskerville';
@@ -44,24 +45,147 @@
   font-display: block;
   src: url(/fonts/Honk/Honk-Regular-Variable.ttf) format('woff2');
 }
-.funnyfont{
-  font-family:'honk','libre-baskerville', 'Inter var';
+@font-face {
+  font-family: 'dos';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: block;
+  src: url(/fonts/Perfect_DOS_VGA_437_Win.ttf) format('woff2');
+}
+@font-face {
+  font-family: 'chicago';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: block;
+  src: url(/fonts/Chicago.ttf) format('woff2');
+}
+
+/* ITC Giovanni */
+@font-face {
+  font-family: 'ITC Giovanni Std';
+  src: url('/fonts/giovanni/GiovanniStd-BlackItalic.eot');
+  src:
+    local('ITC Giovanni Std Black Italic'),
+    local('/fonts/giovanni/GiovanniStd-BlackItalic'),
+    url('/fonts/giovanni/GiovanniStd-BlackItalic.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/giovanni/GiovanniStd-BlackItalic.woff2') format('woff2'),
+    url('/fonts/giovanni/GiovanniStd-BlackItalic.woff') format('woff'),
+    url('/fonts/giovanni/GiovanniStd-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Giovanni Std';
+  src: url('/fonts/giovanni/GiovanniStd-Bold.eot');
+  src:
+    local('ITC Giovanni Std Bold'),
+    local('/fonts/giovanni/GiovanniStd-Bold'),
+    url('/fonts/giovanni/GiovanniStd-Bold.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/giovanni/GiovanniStd-Bold.woff2') format('woff2'),
+    url('/fonts/giovanni/GiovanniStd-Bold.woff') format('woff'),
+    url('/fonts/giovanni/GiovanniStd-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Giovanni Std';
+  src: url('/fonts/giovanni/GiovanniStd-Black.eot');
+  src:
+    local('ITC Giovanni Std Black'),
+    local('/fonts/giovanni/GiovanniStd-Black'),
+    url('/fonts/giovanni/GiovanniStd-Black.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/giovanni/GiovanniStd-Black.woff2') format('woff2'),
+    url('/fonts/giovanni/GiovanniStd-Black.woff') format('woff'),
+    url('/fonts/giovanni/GiovanniStd-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Giovanni Std';
+  src: url('/fonts/giovanni/GiovanniStd-BookItalic.eot');
+  src:
+    local('ITC Giovanni Std Book Italic'),
+    local('/fonts/giovanni/GiovanniStd-BookItalic'),
+    url('/fonts/giovanni/GiovanniStd-BookItalic.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/giovanni/GiovanniStd-BookItalic.woff2') format('woff2'),
+    url('/fonts/giovanni/GiovanniStd-BookItalic.woff') format('woff'),
+    url('/fonts/giovanni/GiovanniStd-BookItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Giovanni Std';
+  src: url('/fonts/giovanni/GiovanniStd-BoldItalic.eot');
+  src:
+    local('ITC Giovanni Std Bold Italic'),
+    local('/fonts/giovanni/GiovanniStd-BoldItalic'),
+    url('/fonts/giovanni/GiovanniStd-BoldItalic.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/giovanni/GiovanniStd-BoldItalic.woff2') format('woff2'),
+    url('/fonts/giovanni/GiovanniStd-BoldItalic.woff') format('woff'),
+    url('/fonts/giovanni/GiovanniStd-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Giovanni Std';
+  src: url('/fonts/giovanni/GiovanniStd-Book.eot');
+  src:
+    local('ITC Giovanni Std Book'),
+    local('/fonts/giovanni/GiovanniStd-Book'),
+    url('/fonts/giovanni/GiovanniStd-Book.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/giovanni/GiovanniStd-Book.woff2') format('woff2'),
+    url('/fonts/giovanni/GiovanniStd-Book.woff') format('woff'),
+    url('/fonts/giovanni/GiovanniStd-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.funnyfont {
+  font-family: 'honk', 'libre-baskerville', 'Inter var';
   font-variation-settings: 'wght' 850;
   font-size: 3.75rem;
-  line-height: 1; 
-
-
+  line-height: 1;
 }
-body{
-  font-family:'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+body {
+  font-family:
+    'ITC Giovanni Std',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    'Noto Sans',
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
   -webkit-font-smoothing: subpixel-antialiased;
   /* font-feature-settings: 'case' 1, 'cpsp' 1, 'dlig' 1, 'cv01' 1, 'cv02',
     'cv03' 1, 'cv04' 1; */
   /* font-variation-settings: 'wght' 450;
   font-variant: common-ligatures contextual; */
-  letter-spacing: 0.00em;
+  letter-spacing: 0em;
   /* background-image:linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) ), url('/images/17.jpg');
   background-repeat: no-repeat;
   background-size: 1920px 1080px;
@@ -74,13 +198,25 @@ h3,
 h4,
 h5,
 h6 {
-  
   font-variation-settings: 'wght' 650;
 }
 h1 {
-  font-family: 'libre-baskerville', 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family:
+    'dos',
+    'Inter var',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    'Noto Sans',
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
   font-variation-settings: 'wght' 850;
 }
 h2 {

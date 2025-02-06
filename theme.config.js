@@ -1,12 +1,10 @@
 const YEAR = new Date().getFullYear()
 
 export default {
-  
   footer: (
     <small style={{ display: 'block', marginTop: '8rem' }}>
-      <time>{YEAR}</time> © Prayag Yadav 
+      <time>{YEAR}</time> © Prayag Yadav
       {/* <a href="/feed.xml">RSS</a> */}
-      
       <style jsx>{`
         a {
           float: right;
@@ -19,14 +17,11 @@ export default {
         }
       `}</style>
     </small>
-
   ),
   navs: [
     {
-      url: 'https://blog.prayagyadav.me',
+      url: 'https://blog.prayagyadav.com',
       name: 'Blog ↗️'
     }
-  ],
-  
+  ]
 }
-
