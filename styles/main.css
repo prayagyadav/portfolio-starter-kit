@@ -142,7 +142,7 @@
 }
 
 @font-face {
-  font-family: 'ITC Giovanni Std';
+  font-family: 'ITC Giovanni Std Bold';
   src: url('/fonts/giovanni/GiovanniStd-Book.eot');
   src:
     local('ITC Giovanni Std Book'),
@@ -166,7 +166,6 @@
 
 body {
   font-family:
-    'ITC Giovanni Std',
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
