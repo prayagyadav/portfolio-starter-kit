@@ -33,6 +33,7 @@ const VideoPlayer = () => {
         ref={videoRef}
         autoPlay
         loop
+        // className="fixed w-auto min-w-full min-h-full max-w-none filter brightness-50 z-[-1]"
         className="fixed w-auto min-w-full min-h-full max-w-none filter brightness-50 z-[-1]"
       >
         <source
