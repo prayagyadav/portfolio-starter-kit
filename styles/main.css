@@ -59,6 +59,13 @@
   font-display: block;
   src: url(/fonts/Chicago.ttf) format('woff2');
 }
+@font-face {
+  font-family: 'transformers';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: block;
+  src: url(/fonts/transformers.ttf) format('woff2');
+}
 
 /* ITC Giovanni */
 @font-face {
@@ -164,8 +171,21 @@
   line-height: 1;
 }
 
+.dosfont {
+  font-family: 'dos', 'Inter var';
+}
+
+.transformersfont {
+  font-family: 'transformers', 'Inter var';
+  font-variation-settings: 'wght' 850;
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
 body {
   font-family:
+    Arial,
+    sans-serif,
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
@@ -174,7 +194,6 @@ body {
     'Helvetica Neue',
     Arial,
     'Noto Sans',
-    sans-serif,
     'Apple Color Emoji',
     'Segoe UI Emoji',
     'Segoe UI Symbol',
@@ -201,6 +220,7 @@ h6 {
 }
 h1 {
   font-family:
+    'transformers',
     'dos',
     'Inter var',
     system-ui,
@@ -217,6 +237,7 @@ h1 {
     'Segoe UI Symbol',
     'Noto Color Emoji';
   font-variation-settings: 'wght' 850;
+  letter-spacing: 0.2rem;
 }
 h2 {
   font-variation-settings: 'wght' 750;
