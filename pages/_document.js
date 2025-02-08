@@ -1,3 +1,4 @@
+import React, { useRef, useState, useEffect } from 'react'
 import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
@@ -29,7 +30,7 @@ export default function Document() {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
       </Head>
-      <body className="bg-black">
+      <body>
         <Main />
         <NextScript />
       </body>
