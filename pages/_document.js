@@ -6,7 +6,8 @@ export default function Document() {
     title: 'Prayag Yadav',
     description: 'Personal portfolio of Prayag Yadav',
     image:
-      'https://images.prismic.io/blog-prayagyadav/ZgnSvst2UUcvBTBK_IMG_20220423_202639.jpg?auto=format%2Ccompress&rect=0%2C321%2C3145%2C3145&w=1920&fit=max'
+      // 'https://images.prismic.io/blog-prayagyadav/ZgnSvst2UUcvBTBK_IMG_20220423_202639.jpg?auto=format%2Ccompress&rect=0%2C321%2C3145%2C3145&w=1920&fit=max'
+      '/images/womens_day_cropped.jpeg'
   }
 
   return (

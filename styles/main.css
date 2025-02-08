@@ -182,6 +182,13 @@
   line-height: 1;
 }
 
+.giovannifont {
+  font-family: 'ITC Giovanni Std', 'Inter var';
+  font-variation-settings: 'wght' 850;
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
 body {
   font-family:
     Arial,
@@ -220,6 +227,7 @@ h6 {
 }
 h1 {
   font-family:
+    Arial,
     'transformers',
     'dos',
     'Inter var',
