@@ -19,8 +19,8 @@ const VideoPlayer = () => {
   ]
 
   const [current_video_name, setcurrent_video_name] = useState(video_name[0])
-
   const [elm, setelm] = useState(1)
+  const [isPlaying, setIsPlaying] = useState(true)
 
   // Function to toggle mute/unmute
   const toggleMute = () => {
@@ -45,6 +45,20 @@ const VideoPlayer = () => {
     }
   }
 
+  // Function to trigger play/pause
+  const PlayPause = () => {
+    const video = videoRef.current
+    if (video) {
+      if (video.paused) {
+        video.play()
+        setIsPlaying(true)
+      } else {
+        video.pause()
+        setIsPlaying(false)
+      }
+    }
+  }
+
   useEffect(() => {
     // Update the video element's mute state if the `isMuted` state changes
     if (videoRef.current) {
@@ -59,7 +73,7 @@ const VideoPlayer = () => {
         autoPlay
         src="https://cdn.prayagyadav.com/abash4py7KxmbpeTYOqgwuazw64933x4iAyWRNzrNswlxlY1zt6I7xdaO/share/what_ive_done.mp4"
         onEnded={NextVideo}
-        className="fixed w-auto min-w-full min-h-full max-w-none filter brightness-50 z-[-1]"
+        className="fixed w-auto min-w-full min-h-full max-w-none filter brightness-[0.25] z-[-1]"
       >
         {/* <source
           // src="https://cdn.prayagyadav.com/abash4py7KxmbpeTYOqgwuazw64933x4iAyWRNzrNswlxlY1zt6I7xdaO/share/what_ive_done.mp4"
@@ -96,7 +110,7 @@ const VideoPlayer = () => {
         >
           Next Song
           <svg
-            class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+            className="rtl:rotate-180 w-3.5 h-3.5 ms-2 "
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -110,6 +124,15 @@ const VideoPlayer = () => {
               d="M1 5h12m0 0L9 1m4 4L9 9"
             />
           </svg>
+        </button>
+      </div>
+      <div>
+        <button
+          type="button"
+          onClick={PlayPause}
+          className="inline-flex items-center hover:text-white border border-gray-800 hover:bg-gray-900 text-sm px-5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 "
+        >
+          {isPlaying ? 'Pause' : 'Play'}
         </button>
       </div>
     </div>

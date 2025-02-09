@@ -6,6 +6,8 @@ date: 2024-03-06
 
 # Homepage
 
+{/*
+
 import Image from 'next/image'
 
 <div className='flex flex-col md:flex-row justify-items-center '>
@@ -28,9 +30,70 @@ import Image from 'next/image'
 	</div>
 </div>
 
+*/}
+
+<p><span className='text-3xl'>Prayag Yadav</span> is a student-researcher of physics, interested in experimental particle physics and aims to pursue a PhD in the same. He has a keen interest in data science and servers and plays chess and makes music in his free time.</p>
+
 ---
 
-Follow him on socials:
+## Project Highlights
+
+import Image from 'next/image'
+
+export function Card(props) {
+
+  return (
+    <div className="transition-all duration-300 w-full h-min bg-gray-900/80 hover:shadow-gray-900 hover:bg-gray-700 hover:shadow-md m-2 px-2">
+    <a href={props.link}>
+      <div className="inline-flex">
+        <div className="md:w-1/2 relative px-2">
+          <Image
+            src={props.imgpath}
+            alt={props.title}
+            width={100}
+            height={100}
+          />
+        </div>
+        <div className="flex justify-center items-center px-2">
+          <div>
+            <p className="font-bold">{props.title}</p>
+            <p className="text-sm">Duration: {props.duration}</p>
+          </div>
+        </div>
+      </div>
+      </a>
+    </div>
+  );
+}
+
+<Card
+  title = "HSF-India Trainee Project"
+  imgpath = "/images/princeton_logo.png"
+  duration = "June 2023 - Ongoing"
+  link = "./projects#hsf-india-trainee-project"
+/>
+<Card
+  title = "Master's Thesis"
+  imgpath = "/images/uoh_logo.png"
+  duration = "July 2023 to May 2024"
+  link = "./projects#masters-thesis"
+/>
+<Card
+  title = "Internship with CMS group at University of Hyderabad"
+  imgpath = "/images/cms_logo.png"
+  duration = "20th July 2022 to 4th July 2023"
+  link = "./projects#internship-with-cms-group-at-university-of-hyderabad"
+/>
+<Card
+  title = "Project in experimental nuclear physics"
+  imgpath = "/images/tifr_logo.png"
+  duration = "(May 2021 to July 2021) and (Dec 2021 to Jan 2022)"
+  link = "./projects#project-in-experimental-nuclear-physics"
+/>
+
+---
+
+## Follow him on socials:
 
 <div className="flex flex-col md:flex-row items-center justify-center gap-2">
 
