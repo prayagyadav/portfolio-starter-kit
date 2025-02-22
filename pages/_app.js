@@ -4,6 +4,8 @@ import '../styles/main.css'
 import Script from 'next/script'
 import VideoPlayer from './video'
 
+import { useState } from 'react'
+
 // export default function Nextra({ Component, pageProps }) {
 //   return (
 //     <>
@@ -28,6 +30,13 @@ import VideoPlayer from './video'
 // }
 
 export default function Nextra({ Component, pageProps }) {
+  const [isVisible, setisVisible] = useState(true)
+
+  // Function to toggle text visibility
+  const toggleVisibility = () => {
+    setisVisible(!isVisible)
+  }
+
   return (
     <>
       <Head>
@@ -60,8 +69,18 @@ export default function Nextra({ Component, pageProps }) {
           crossOrigin="anonymous"
         />
       </Head>
-      <VideoPlayer className="z-[-1]"></VideoPlayer>
-      <Component {...pageProps} />
+      <VideoPlayer
+        isVisible={isVisible}
+        onClickVisibilty={toggleVisibility}
+        className="z-[-1]"
+      ></VideoPlayer>
+      {isVisible ? (
+        <Component {...pageProps} />
+      ) : (
+        <Head>
+          <title>Fullscreen Mode</title>
+        </Head>
+      )}
     </>
   )
 }

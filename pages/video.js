@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 
-const VideoPlayer = () => {
+const VideoPlayer = ({ isVisible, onClickVisibilty }) => {
   const videoRef = useRef(null)
   const [isMuted, setIsMuted] = useState(true)
 
@@ -88,25 +88,26 @@ const VideoPlayer = () => {
           Now Playing: {current_video_name} ({isMuted ? 'Muted' : 'Unmuted'})
         </div>
         <div>
-          <label class="inline-flex items-center cursor-pointer m-2">
+          <label className="inline-flex items-center cursor-pointer m-2">
             <input
               type="checkbox"
               value=""
-              class="sr-only peer"
+              className="sr-only peer"
               onClick={toggleMute}
             />
-            <div class="relative w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-black-600 dark:peer-checked:bg-black-600"></div>
-            <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300 ">
+            {/* <div class="relative w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-black-600 dark:peer-checked:bg-black-600"></div> */}
+            <div className="relative w-5 h-5 border-2 border-gray-600 peer after:w-5 after:h-5 peer-checked:bg-gray-600 peer-hover:bg-gray-600 peer-hover:border-gray-400 "></div>
+            <span className="ms-3 w-20 text-sm font-medium text-gray-900 dark:text-gray-300 ">
               Sound: {isMuted ? 'Off' : 'On'}
             </span>
           </label>
         </div>
       </div>
-      <div>
+      <div className="inline-flex justify-between items-center w-full">
         <button
           type="button"
           onClick={NextVideo}
-          className="inline-flex items-center hover:text-white border border-gray-800 hover:bg-gray-900 text-sm px-5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 "
+          className="inline-flex items-center hover:text-white border border-gray-800 hover:bg-gray-900 text-sm px-5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600  "
         >
           Next Song
           <svg
@@ -125,6 +126,20 @@ const VideoPlayer = () => {
             />
           </svg>
         </button>
+        <div>
+          <label className="inline-flex items-center cursor-pointer m-2">
+            <input
+              type="checkbox"
+              value=""
+              className="sr-only peer"
+              onClick={onClickVisibilty}
+            />
+            <div className="relative w-5 h-5 border-2 border-gray-600 bg-gray-600 peer after:w-5 after:h-5 after:bg-gray-600 peer-checked:bg-transparent peer-hover:bg-transparent peer-hover:border-gray-400"></div>
+            <span className="ms-3 w-20 text-sm font-medium text-gray-900 dark:text-gray-300 ">
+              Text: {isVisible ? 'On' : 'Off'}
+            </span>
+          </label>
+        </div>
       </div>
       <div>
         <button
