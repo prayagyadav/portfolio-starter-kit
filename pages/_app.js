@@ -3,6 +3,7 @@ import Head from 'next/head'
 import '../styles/main.css'
 import Script from 'next/script'
 import VideoPlayer from './video'
+import { Analytics } from '@vercel/analytics/react'
 
 import { useState } from 'react'
 
@@ -69,6 +70,7 @@ export default function Nextra({ Component, pageProps }) {
           crossOrigin="anonymous"
         />
       </Head>
+      <Analytics />
       <VideoPlayer
         isVisible={isVisible}
         onClickVisibilty={toggleVisibility}
