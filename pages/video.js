@@ -8,14 +8,34 @@ const VideoPlayer = ({ isVisible, onClickVisibilty }) => {
     'https://cdn.prayagyadav.com/abash4py7KxmbpeTYOqgwuazw64933x4iAyWRNzrNswlxlY1zt6I7xdaO/share/what_ive_done.mp4',
     'https://cdn.prayagyadav.com/abash4py7KxmbpeTYOqgwuazw64933x4iAyWRNzrNswlxlY1zt6I7xdaO/share/come_undone.mp4',
     'https://cdn.prayagyadav.com/abash4py7KxmbpeTYOqgwuazw64933x4iAyWRNzrNswlxlY1zt6I7xdaO/share/vertigo.mp4',
-    'https://cdn.prayagyadav.com/abash4py7KxmbpeTYOqgwuazw64933x4iAyWRNzrNswlxlY1zt6I7xdaO/share/its_my_life.mp4'
+    'https://cdn.prayagyadav.com/abash4py7KxmbpeTYOqgwuazw64933x4iAyWRNzrNswlxlY1zt6I7xdaO/share/its_my_life.mp4',
+    'https://upload.wikimedia.org/wikipedia/commons/9/91/%28G%29I-DLE_-_Uh_Oh.webm',
+    'https://upload.wikimedia.org/wikipedia/commons/b/b8/Robin_Schulz_-_%22Sugar%22_-_Director%27s_Cut.webm',
+    'https://upload.wikimedia.org/wikipedia/commons/6/68/JINJER_-_Sit_Stay_Roll_Over_%28Official_Music_Video%29.webm',
+    'https://upload.wikimedia.org/wikipedia/commons/2/2e/Robin_Schulz_-_%22Show_Me_Love%22_--_Official_Music_Video.webm',
+    'https://upload.wikimedia.org/wikipedia/commons/4/44/Depeche_Mode_-_Everything_Counts_%28Live_-_from_101%29_%28Official_Video%29.webm',
+    'https://upload.wikimedia.org/wikipedia/commons/5/52/Depeche_Mode_-_It%27s_Called_A_Heart_%28Official_Video%29.webm',
+    'https://upload.wikimedia.org/wikipedia/commons/a/a3/Le_Sserafim_-_Fearless_MV_%28DOP%29.webm',
+    'https://upload.wikimedia.org/wikipedia/commons/4/44/%E3%81%BE%E3%81%A0%E5%83%95%E3%82%89%E3%82%92%E7%9F%A5%E3%82%89%E3%81%AA%E3%81%84%E5%90%9B%E3%81%B8_Music_Video.webm',
+    'https://upload.wikimedia.org/wikipedia/commons/b/b7/%28SPECIAL_VIDEO%29_SEVENTEEN%28%EC%84%B8%EB%B8%90%ED%8B%B4%29_-_Anyone.webm',
+    'https://upload.wikimedia.org/wikipedia/commons/f/fa/Ave_Maria_-_Schubert_~_Violin.webm'
   ]
 
   var video_name = [
     "What I've Done - Linkin Park",
     'Come Undone - Duran Duran',
     'Vertigo - U2',
-    "It's My Life - Talk Talk"
+    "It's My Life - Talk Talk",
+    'Uh-Oh - (G)I-DLE',
+    'Sugar - Robin Schultz',
+    'Sit Stay Roll Over - JINJER',
+    'Show me love - Robin Shultz',
+    'Everything Counts (Live) - Depeche Mode',
+    "It's called a heart - Depeche Mode",
+    'Fearless - Le Sserafim',
+    'まだ僕らを知らない君へ',
+    'Anyone - SEVENTEEN(세븐틴)',
+    'Ave Maria - Schubert played by Katy Adelson'
   ]
 
   const [current_video_name, setcurrent_video_name] = useState(video_name[0])
@@ -73,7 +93,7 @@ const VideoPlayer = ({ isVisible, onClickVisibilty }) => {
         autoPlay
         src="https://cdn.prayagyadav.com/abash4py7KxmbpeTYOqgwuazw64933x4iAyWRNzrNswlxlY1zt6I7xdaO/share/what_ive_done.mp4"
         onEnded={NextVideo}
-        className="fixed w-auto min-w-full min-h-full max-w-none filter brightness-[0.25] z-[-1]"
+        className="fixed w-full max-h-full filter brightness-[0.25] z-[-1] "
       >
         {/* <source
           // src="https://cdn.prayagyadav.com/abash4py7KxmbpeTYOqgwuazw64933x4iAyWRNzrNswlxlY1zt6I7xdaO/share/what_ive_done.mp4"
@@ -119,9 +139,9 @@ const VideoPlayer = ({ isVisible, onClickVisibilty }) => {
           >
             <path
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M1 5h12m0 0L9 1m4 4L9 9"
             />
           </svg>
