@@ -1,4 +1,6 @@
+import moment from 'moment/moment'
 import React, { useEffect, useState } from 'react'
+const moment_tz = require('moment-timezone')
 
 const locationMap = {
   geneva: {
@@ -36,21 +38,23 @@ const locationMap = {
     lat: 17.4065,
     lon: 78.4772,
     timezone: 'Asia/Kolkata'
+  },
+  ghugus: {
+    name: 'Ghugus, India',
+    lat: 19.9414,
+    lon: 79.1153,
+    timezone: 'Asia/Kolkata'
   }
 }
 
 const WeatherDataViewer = ({ place = 'geneva' }) => {
   const [weatherData, setWeatherData] = useState(null)
-  const [timeData, setTimeData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
   const selected = locationMap[place.toLowerCase()]
   const WEATHER_API_URL = selected
-    ? `https://www.7timer.info/bin/astro.php?lon=${selected.lon}&lat=${selected.lat}&product=astro&output=json`
-    : null
-  const TIME_API_URL = selected
-    ? `https://worldtimeapi.org/api/timezone/${selected.timezone}`
+    ? `https://www.7timer.info/bin/civil.php?lon=${selected.lon}&lat=${selected.lat}&product=civil&output=json`
     : null
 
   const fetchWithRetry = async (url, retries = 3, delay = 1000) => {
@@ -79,12 +83,8 @@ const WeatherDataViewer = ({ place = 'geneva' }) => {
       setError(null)
 
       try {
-        const [weather, time] = await Promise.all([
-          fetchWithRetry(WEATHER_API_URL),
-          fetchWithRetry(TIME_API_URL)
-        ])
+        const [weather] = await Promise.all([fetchWithRetry(WEATHER_API_URL)])
         setWeatherData(weather.dataseries[0])
-        setTimeData(time)
       } catch (err) {
         setError(err.message)
       } finally {
@@ -93,35 +93,42 @@ const WeatherDataViewer = ({ place = 'geneva' }) => {
     }
 
     fetchAllData()
-  }, [place, WEATHER_API_URL, TIME_API_URL, selected])
+  }, [place, WEATHER_API_URL, selected])
+
+  // const local_timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+  const utc = new Date().getTime()
+  const timeobj = moment_tz.tz(utc, selected.timezone) // creates moment object in specified timezone
+  const Converted_DateTimeStr = timeobj.format('h:mm A MMMM Do YYYY')
+  const Converted_DateStr = timeobj.format('MMMM Do YYYY')
+  const Converted_TimeStr = timeobj.format('h:mm A')
 
   if (error) return <div className="p-4 text-red-500">Error: {error}</div>
-  if (loading) return <div className="p-4">Loading my whereabouts...</div>
-  if (!weatherData || !timeData)
-    return <div className="p-4">No data available</div>
-
-  const date = new Date(timeData.datetime)
-  const dateStr = date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    timeZone: selected.timezone
-  })
-  const timeStr = date.toLocaleTimeString('en-US', {
-    hour: 'numeric',
-    minute: '2-digit',
-    hour12: true,
-    timeZone: selected.timezone
-  })
+  // if (loading) return <div className="p-4">Loading my whereabouts...</div>
+  if (loading | !weatherData) {
+    return (
+      <div className="px-4">
+        <p className="font-extrabold px-2">{selected.name}</p>
+        <div className="flex flex-wrap items-center gap-4 font-extrabold">
+          <div className="px-2">{Converted_DateTimeStr}</div>
+          {loading ? (
+            <div className="px-2 text-blue-400">Loading weather data ...</div>
+          ) : (
+            <div className="px-2 text-blue-400">No weather data available</div>
+          )}
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="px-4">
-      {/* <p>Current residing at</p> */}
       <p className="font-extrabold px-2">{selected.name}</p>
       <div className="flex flex-wrap items-center gap-4 font-extrabold">
-        <div className="px-2">{dateStr}</div>
-        <div className="px-2">{timeStr}</div>
-        <div className="px-2 text-blue-600">{weatherData.temp2m}°C</div>
+        <div className="text-xl text-bold px-2">{Converted_DateStr}</div>
+        <div className="text-xl text-bold px-2">{Converted_TimeStr}</div>
+        <div className="text-xl text-bold px-2 text-blue-400">
+          {weatherData.temp2m}°C {weatherData.weather}
+        </div>
       </div>
     </div>
   )
