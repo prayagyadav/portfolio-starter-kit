@@ -84,7 +84,7 @@ const WeatherDataViewer = ({ place = 'geneva' }) => {
 
       try {
         const [weather] = await Promise.all([fetchWithRetry(WEATHER_API_URL)])
-        setWeatherData(weather.dataseries[0])
+        setWeatherData(weather)
       } catch (err) {
         setError(err.message)
       } finally {
@@ -120,6 +120,22 @@ const WeatherDataViewer = ({ place = 'geneva' }) => {
     )
   }
 
+  const timeString = weatherData.init
+  const parsedTime = moment(timeString, 'YYYYMMDDHH')
+
+  const timepointsByIndex = {}
+
+  weatherData.dataseries.forEach((entry, index) => {
+    timepointsByIndex[index] = parsedTime.clone().add(entry.timepoint, 'hours')
+  })
+
+  const closestIndex = Object.keys(timepointsByIndex).reduce((a, b) =>
+    Math.abs(timepointsByIndex[a].diff(timeobj)) <
+    Math.abs(timepointsByIndex[b].diff(timeobj))
+      ? a
+      : b
+  )
+
   return (
     <div className="px-4">
       <p className="font-extrabold px-2">{selected.name}</p>
@@ -127,7 +143,11 @@ const WeatherDataViewer = ({ place = 'geneva' }) => {
         <div className="text-xl text-bold px-2">{Converted_DateStr}</div>
         <div className="text-xl text-bold px-2">{Converted_TimeStr}</div>
         <div className="text-xl text-bold px-2 text-blue-400">
-          {weatherData.temp2m}°C {weatherData.weather}
+          {/* {timepointsByIndex[closestIndex].format('YYYYMMDDHH')}{' '} */}
+          {weatherData.dataseries[closestIndex].temp2m}°C
+        </div>
+        <div className="text-xl text-bold px-2 text-blue-400">
+          {weatherData.dataseries[closestIndex].weather}
         </div>
       </div>
     </div>
