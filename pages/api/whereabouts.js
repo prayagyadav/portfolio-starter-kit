@@ -2,6 +2,8 @@ import moment from 'moment/moment'
 import React, { useEffect, useState } from 'react'
 const moment_tz = require('moment-timezone')
 
+import cors, { runMiddleware } from '../../lib/cors'
+
 const locationMap = {
   geneva: {
     name: 'Meyrin, Geneva, Switzerland',
@@ -72,6 +74,8 @@ export default async function handler(req, res) {
   const WEATHER_API_URL = `https://www.7timer.info/bin/civil.php?lon=${selected.lon}&lat=${selected.lat}&product=civil&output=json`
 
   try {
+    await runMiddleware(req, res, cors) // Apply CORS
+
     const weatherData = await fetchWithRetry(WEATHER_API_URL)
 
     const utc = new Date().getTime()
