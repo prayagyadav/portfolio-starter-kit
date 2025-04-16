@@ -3,6 +3,7 @@ import Head from 'next/head'
 import '../styles/main.css'
 import Script from 'next/script'
 import VideoPlayer from './video'
+import LiveStream from './live'
 import { Analytics } from '@vercel/analytics/react'
 
 import { useState } from 'react'
@@ -71,11 +72,12 @@ export default function Nextra({ Component, pageProps }) {
         />
       </Head>
       <Analytics />
-      <VideoPlayer
+      {/* <VideoPlayer
         isVisible={isVisible}
         onClickVisibilty={toggleVisibility}
         className="z-[-1]"
-      ></VideoPlayer>
+      ></VideoPlayer> */}
+      {/* <LiveStream className="z-[-1]"></LiveStream> */}
       {isVisible ? (
         <Component {...pageProps} />
       ) : (
