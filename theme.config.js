@@ -20,6 +20,10 @@ export default {
   ),
   navs: [
     {
+      url: 'https://pro.prayagyadav.com',
+      name: 'Pro Mode ↗️'
+    },
+    {
       url: 'https://blog.prayagyadav.com',
       name: 'Blog ↗️'
     }
