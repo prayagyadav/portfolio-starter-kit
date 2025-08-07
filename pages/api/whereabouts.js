@@ -46,7 +46,14 @@ const locationMap = {
     lat: 19.9414,
     lon: 79.1153,
     timezone: 'Asia/Kolkata'
+  },
+  lincoln: {
+    name: 'Lincoln, NE, USA',
+    lat: 40.819,
+    lon: -96.7,
+    timezone: 'America/Chicago'
   }
+
 }
 
 const fetchWithRetry = async (url, retries = 3, delay = 1000) => {
